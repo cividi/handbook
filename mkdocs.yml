@@ -1,0 +1,18 @@
+site_name: Cividi Handbook
+site_url: https://handbook.cividi.ch/
+site_description: A guide to our operations and platforms
+site_author: Team Cividi
+
+repo_url: https://github.com/cividi/handbook
+
+copyright: Copyright &copy; 2020 <a href="https://cividi.ch">Cividi GmbH</a>.
+
+theme:
+    name: pulse
+
+markdown_extensions:
+    - toc:
+        permalink: '#'
+
+plugins:
+    - search
