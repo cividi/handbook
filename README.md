@@ -2,7 +2,7 @@
 
 See the live documentation for more details:
 
-https://handbook.cividi.ch/
+https://handbook.cividi.space/
 
 [![PyPI Version][pypi-v-image]][pypi-v-link]
 [![Build Status][travis-image]][travis-link]
