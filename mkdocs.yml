@@ -6,12 +6,30 @@ site_author: Team Cividi
 repo_url: https://github.com/cividi/handbook
 
 copyright: Copyright &copy; 2020 <a href="https://cividi.ch">Cividi GmbH</a>.
-site_name: Cividi Handbook
+site_name: Cividi Handbook 1.x
 nav:
-    - Home: index.md
-    - About: about.md
+    - 'Home': index.md
+    - 'About': about.md
+    - 'Concepts':
+        - 'Snapshot': concepts/snapshot.md
+        - 'Frictionless': concepts/frictionless.md
+
 theme:
-    name: pulse
+  name: material 
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
 
 markdown_extensions:
     - toc:
@@ -19,3 +37,6 @@ markdown_extensions:
 
 plugins:
     - search
+extra:
+  version:
+    provider: mike
