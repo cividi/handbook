@@ -6,7 +6,10 @@ site_author: Team Cividi
 repo_url: https://github.com/cividi/handbook
 
 copyright: Copyright &copy; 2020 <a href="https://cividi.ch">Cividi GmbH</a>.
-
+site_name: Cividi Handbook
+nav:
+    - Home: index.md
+    - About: about.md
 theme:
     name: pulse
 
