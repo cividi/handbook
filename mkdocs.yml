@@ -22,7 +22,7 @@ nav:
       - 'About': 'projects/projects.md'
       - 'Wohlen': 'projects/wohlen.md'
   - 'Media': 'media/media.md'
-
+edit_uri: edit/main/docs/
 theme:
   name: material 
   palette:
