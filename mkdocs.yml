@@ -4,15 +4,24 @@ site_description: A guide to our operations and platforms
 site_author: Team Cividi
 
 repo_url: https://github.com/cividi/handbook
+repo_name: cividi/handbook
 
 copyright: Copyright &copy; 2020 <a href="https://cividi.ch">Cividi GmbH</a>.
 site_name: Cividi Handbook 1.x
 nav:
-    - 'Home': index.md
-    - 'About': about.md
-    - 'Concepts':
-        - 'Snapshot': concepts/snapshot.md
-        - 'Frictionless': concepts/frictionless.md
+  - 'Home': 'index.md'
+  - 'About': 'about.md'
+  - 'Tools & Concepts':
+      - 'About': 'concepts/about.md'
+      - 'Snapshot': 'concepts/snapshot.md'
+      - 'Frictionless': 'concepts/frictionless.md'
+  - 'Evalutions of Architecture':
+      - 'About': 'eval/eval.md'
+      - 'Maps': 'eval/maps.md'
+  - 'Projects':
+      - 'About': 'projects/projects.md'
+      - 'Wohlen': 'projects/wohlen.md'
+  - 'Media': 'media/media.md'
 
 theme:
   name: material 
@@ -30,13 +39,15 @@ theme:
   features:
     - navigation.tabs
     - navigation.top
-
+  icon:
+    repo: fontawesome/brands/github
 markdown_extensions:
     - toc:
         permalink: '#'
 
 plugins:
     - search
+    - git-revision-date
 extra:
   version:
     provider: mike
