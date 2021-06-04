@@ -1,4 +1,4 @@
-title: Concepts
+title: Tech Stack/Snapshot
 
 ## Create your own Snapshot - Option 1: QGIS Plugin
 

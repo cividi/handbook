@@ -12,7 +12,7 @@ Our small knowledge base. To know what are our skills, to whom to turn to when s
   - Joris
   - Oleg
   - Luis
-  - Viktora
+  - Viktoria
   - Thorben
   - Karolina
   - Sven 

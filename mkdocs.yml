@@ -9,23 +9,41 @@ repo_name: cividi/handbook
 copyright: Copyright &copy; 2020 <a href="https://cividi.ch">Cividi GmbH</a>.
 site_name: Cividi Handbook 1.x
 nav:
-  - 'Home': 'index.md'
-  - 'About': 'about.md'
-  - 'Tools & Concepts':
-      - 'About': 'concepts/about.md'
-      - 'Snapshot': 'concepts/snapshot.md'
-      - 'Frictionless': 'concepts/frictionless.md'
-  - 'Evalutions of Architecture':
-      - 'About': 'eval/eval.md'
-      - 'Maps': 'eval/maps.md'
+  - 'Home':
+      - 'Welcome':  'home/welcome.md'
+      - 'Cividi': 'home/cividi.md'
+      - 'Onboarding': 'home/onboarding.md'
+  - 'Drafts':
+      - 'About': 'drafts/about.md'
+      - 'Your Draft': 'drafts/your_draft.md'
+  - 'Tech Stack':
+      - 'About': 'tech/about.md'
+      - 'Snapshot': 'tech/snapshot.md'
+      - 'Frictionless': 'tech/frictionless.md'
+      - 'Orchestration & Data Pipelines': 'tech/pipelines.md'
+      - 'Gemeindescan': 'tech/gemeindescan.md'
+      - 'Lab': 'tech/lab.md'
+  - 'Maps':
+      - 'About': 'maps/about.md'
+      - 'Maps': 'maps/maps_engine_performance_test.md'
+      - 'Lab': 'maps.lab.md'
+  - 'Style Guide':
+      - 'About': 'styleguide/about.md'
+  - 'Urbanism':
+      - 'About': 'urbanism/about.md'
   - 'Projects':
-      - 'About': 'projects/projects.md'
-      - 'Wohlen': 'projects/wohlen.md'
-  - 'Media': 'media/media.md'
+      - 'About': 'projects/about.md'
+  - 'Events': 
+      - 'About': 'events/about.md'
+      - 'GeoHackmin' : 'events/geohackmin.md'
+  - 'Media':
+      - 'About': 'media/about.md'
+
 edit_uri: edit/main/docs/
 theme:
   name: material 
   palette:
+    - primary: deep purple
     - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
@@ -44,7 +62,9 @@ theme:
 markdown_extensions:
     - toc:
         permalink: '#'
-
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
 plugins:
     - search
     - git-revision-date

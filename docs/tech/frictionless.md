@@ -1,4 +1,4 @@
-title: Concepts/Frictionless 
+title: Tech Stack/Frictionless 
 
 # Frictionless
 
