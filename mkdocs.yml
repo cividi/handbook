@@ -7,7 +7,7 @@ repo_url: https://github.com/cividi/handbook
 repo_name: cividi/handbook
 
 copyright: Copyright &copy; 2020 <a href="https://cividi.ch">Cividi GmbH</a>.
-site_name: Cividi Handbook 1.x
+site_name: Cividi Handbook 0.2
 nav:
   - 'Home':
       - 'Welcome':  'home/welcome.md'
