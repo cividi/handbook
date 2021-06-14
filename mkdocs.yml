@@ -9,10 +9,11 @@ repo_name: cividi/handbook
 copyright: Copyright &copy; 2020 <a href="https://cividi.ch">Cividi GmbH</a>.
 site_name: Cividi Handbook 0.2
 nav:
-  - 'Home':
-      - 'Welcome':  'home/welcome.md'
-      - 'Cividi': 'home/cividi.md'
-      - 'Onboarding': 'home/onboarding.md'
+  - 'index.md'
+  - 'About':
+  #    - 'Welcome':  'about/welcome.md'
+      - 'Cividi': 'about/cividi.md'
+      - 'Onboarding': 'about/onboarding.md'
   - 'Drafts':
       - 'About': 'drafts/about.md'
       - 'Your Draft': 'drafts/your_draft.md'
@@ -26,7 +27,7 @@ nav:
   - 'Maps':
       - 'About': 'maps/about.md'
       - 'Maps': 'maps/maps_engine_performance_test.md'
-      - 'Lab': 'maps.lab.md'
+      - 'Lab': 'maps/lab.md'
   - 'Style Guide':
       - 'About': 'styleguide/about.md'
   - 'Urbanism':
