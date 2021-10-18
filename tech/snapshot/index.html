@@ -1,0 +1,1527 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A guide to our operations and platforms">
+      
+      
+      
+        <meta name="author" content="Team Cividi">
+      
+      
+        <link rel="canonical" href="https://handbook.cividi.ch/tech/snapshot/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
+    
+    
+      
+        <title>Tech Stack/Snapshot - Cividi Handbook 0.2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.5143246d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="#543076" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#create-your-own-snapshot-option-1-qgis-plugin" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Cividi Handbook 0.2" class="md-header__button md-logo" aria-label="Cividi Handbook 0.2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cividi Handbook 0.2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tech Stack/Snapshot
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="" data-md-color-primary="#543076" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_3">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/cividi/handbook/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cividi/handbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/cividi/" class="md-tabs__link">
+        About
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../drafts/about/" class="md-tabs__link">
+        Drafts
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../about/" class="md-tabs__link md-tabs__link--active">
+        Tech Stack
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../maps/about/" class="md-tabs__link">
+        Maps
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../styleguide/about/" class="md-tabs__link">
+        Style Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../urbanism/about/" class="md-tabs__link">
+        Urbanism
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../projects/about/" class="md-tabs__link">
+        Projects
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../events/about/" class="md-tabs__link">
+        Events
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../media/about/" class="md-tabs__link">
+        Media
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Cividi Handbook 0.2" class="md-nav__button md-logo" aria-label="Cividi Handbook 0.2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Cividi Handbook 0.2
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/cividi/handbook/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    cividi/handbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          About
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="About" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/cividi/" class="md-nav__link">
+        Cividi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/onboarding/" class="md-nav__link">
+        Onboarding
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Drafts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Drafts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Drafts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../drafts/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../drafts/your_draft/" class="md-nav__link">
+        Your Draft
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tech Stack
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tech Stack" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tech Stack
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Snapshot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Snapshot
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-own-snapshot-option-1-qgis-plugin" class="md-nav__link">
+    Create your own Snapshot - Option 1: QGIS Plugin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-own-snapshot-option-2-write-your-own-exporter" class="md-nav__link">
+    Create your own Snapshot - Option 2: Write your own exporter
+  </a>
+  
+    <nav class="md-nav" aria-label="Create your own Snapshot - Option 2: Write your own exporter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metadata-here-is-recommended-minimal-schema-to-use" class="md-nav__link">
+    Metadata. Here is recommended minimal schema to use:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#styled-data" class="md-nav__link">
+    Styled data
+  </a>
+  
+    <nav class="md-nav" aria-label="Styled data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mediatypes" class="md-nav__link">
+    Mediatypes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snapshot" class="md-nav__link">
+    Snapshot
+  </a>
+  
+    <nav class="md-nav" aria-label="Snapshot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-snapshot" class="md-nav__link">
+    Example Snapshot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frictionless/" class="md-nav__link">
+        Frictionless
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipelines/" class="md-nav__link">
+        Orchestration & Data Pipelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gemeindescan/" class="md-nav__link">
+        Gemeindescan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab/" class="md-nav__link">
+        Lab
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Maps
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Maps" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Maps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps/maps_engine_performance_test/" class="md-nav__link">
+        Maps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maps/lab/" class="md-nav__link">
+        Lab
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Style Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Style Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Style Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../styleguide/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Urbanism
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Urbanism" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Urbanism
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../urbanism/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Projects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Projects" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Events
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Events" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Events
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/geohackmin/" class="md-nav__link">
+        GeoHackmin
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Media
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Media" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Media
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../media/about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-own-snapshot-option-1-qgis-plugin" class="md-nav__link">
+    Create your own Snapshot - Option 1: QGIS Plugin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-own-snapshot-option-2-write-your-own-exporter" class="md-nav__link">
+    Create your own Snapshot - Option 2: Write your own exporter
+  </a>
+  
+    <nav class="md-nav" aria-label="Create your own Snapshot - Option 2: Write your own exporter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metadata-here-is-recommended-minimal-schema-to-use" class="md-nav__link">
+    Metadata. Here is recommended minimal schema to use:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#styled-data" class="md-nav__link">
+    Styled data
+  </a>
+  
+    <nav class="md-nav" aria-label="Styled data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mediatypes" class="md-nav__link">
+    Mediatypes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snapshot" class="md-nav__link">
+    Snapshot
+  </a>
+  
+    <nav class="md-nav" aria-label="Snapshot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-snapshot" class="md-nav__link">
+    Example Snapshot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/cividi/handbook/edit/main/docs/tech/snapshot.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h2 id="create-your-own-snapshot-option-1-qgis-plugin">Create your own Snapshot - Option 1: QGIS Plugin<a class="headerlink" href="#create-your-own-snapshot-option-1-qgis-plugin" title="Permanent link">#</a></h2>
+<p>The experimental QGIS Pugin "<a href="https://github.com/cividi/spatial-data-package-export">Spatial Data Package Export</a>" is available via the <a href="https://plugins.qgis.org/plugins/SpatialDataPackageExport/">QGIS plugin repository</a> or on <a href="https://github.com/cividi/spatial-data-package-export/releases/">GitHub</a>.</p>
+<p><a href="https://github.com/cividi/spatial-data-package-export/releases/download/0.2.0/SpatialDataPackageExport.0.2.0.zip">Direct Download</a></p>
+<p>To install:</p>
+<ol>
+<li>make sure to have <a href="https://qgis.org">QGIS</a> 3.14 or later installed</li>
+<li>Open Plugins -&gt; Manage Plugins</li>
+<li>Search for Spatial Datapackage Export</li>
+<li>Click Install</li>
+</ol>
+<p>Alternativly download the latest release from github.com/cividi/spatial-data-package-export/releases and manually install via zip or build from source.</p>
+<h2 id="create-your-own-snapshot-option-2-write-your-own-exporter">Create your own Snapshot - Option 2: Write your own exporter<a class="headerlink" href="#create-your-own-snapshot-option-2-write-your-own-exporter" title="Permanent link">#</a></h2>
+<p>Datapackage consists of metadata and data itself. For rednering a map you need to include the styling (Mapbox Simple Styles) to the exported GeoJSON.
+Datapackage (Snapshot) = metadata + styled (geo)json</p>
+<p>The full spec, a JSON schema and examples are available <a href="https://github.com/cividi/spatial-data-export-spec">here</a>.</p>
+<h4 id="metadata-here-is-recommended-minimal-schema-to-use">Metadata. Here is recommended minimal schema to use:<a class="headerlink" href="#metadata-here-is-recommended-minimal-schema-to-use" title="Permanent link">#</a></h4>
+<pre><code class="language-yaml">name: &quot;{{ name }}&quot;
+license: &quot;ODC-By-1.0&quot;
+licenses:
+    - 
+        url: &quot;https://opendatacommons.org/licenses/by/1.0/&quot;
+        type: &quot;ODC-By-1.0&quot;
+views:
+    - 
+        name: &quot;mapview&quot;
+        specType: &quot;gemeindescanSnapshot&quot;
+        spec:
+            title: &quot;{{ title }}&quot;
+            description: &quot;{{ description }}&quot;
+            attribution: &quot;&quot;
+            bounds: &quot;{{ bounds_to_have }} &quot;
+            legend: &quot;{{ legend }}&quot;&quot;
+        resources: [&quot;data-layer&quot;, &quot;mapbox-background&quot;]
+sources:
+    -
+        url: &quot;https://www.openstreetmap.org/copyright&quot;
+        title: &quot;Karte: Mapbox, © OpenStreetMap&quot;
+resources:
+    - 
+        name: &quot;data-layer&quot;
+        mediatype: &quot;application/vnd.geo+json&quot; or &quot;application/vnd.simplestyle-extended&quot; see below
+        data:
+            name: &quot;data&quot;
+            type: &quot;FeatureCollection&quot;
+            features: &quot;{{ STYLED DATA }}&quot;
+    -
+        name: &quot;mapbox-background&quot;
+        path: &quot;mapbox://styles/gemeindescan/ckc4sha4310d21iszp8ri17u2&quot;
+        mediatype: &quot;application/vnd.mapbox-vector-tile&quot;
+        data: 
+</code></pre>
+<p>In this schema you have variables in "{{ <em>variable</em> }}", which you would rewrite to text: "{{ <em>variable</em> }}" --&gt; "desired variable"
+{{ bounds_to_have }} - defines the frame  of the map.
+                     - example: </p>
+<pre><code class="language-python">&quot;geo:47.310897, 8.458443&quot;, &quot;geo:47.446897, 8.638687&quot;
+</code></pre>
+<p>{{ legend }} - legend shown
+             - example: </p>
+<pre><code class="language-python">[{&quot;label&quot;: 0, &quot;size&quot;: &quot;3.0&quot;, &quot;shape&quot;: &quot;circle&quot;, &quot;primary&quot;: false, &quot;fillColor&quot;: &quot;#f30000&quot;, &quot;fillOpacity&quot;: 0.7, &quot;strokeColor&quot;: &quot;#232323&quot;, &quot;strokeWidth&quot;: 1.0, &quot;strokeOpacity&quot;: 1.0},
+{&quot;label&quot;: 1, &quot;size&quot;: &quot;3.0&quot;, &quot;shape&quot;: &quot;circle&quot;, &quot;primary&quot;: false, &quot;fillColor&quot;: &quot;#f30a00&quot;, &quot;fillOpacity&quot;: 0.7, &quot;strokeColor&quot;: &quot;#232323&quot;, &quot;strokeWidth&quot;: 1.0, &quot;strokeOpacity&quot;: 1.0}, 
+{&quot;label&quot;: 2, &quot;size&quot;: &quot;3.0&quot;, &quot;shape&quot;: &quot;circle&quot;, &quot;primary&quot;: false, &quot;fillColor&quot;: &quot;#f41400&quot;, &quot;fillOpacity&quot;: 0.7, &quot;strokeColor&quot;: &quot;#232323&quot;, &quot;strokeWidth&quot;: 1.0, &quot;strokeOpacity&quot;: 1.0}]
+</code></pre>
+<h4 id="styled-data">Styled data<a class="headerlink" href="#styled-data" title="Permanent link">#</a></h4>
+<p>{{ STYLED DATA }} -- your data, each data point has to have style properties, depending on which type of data layer you want to add.</p>
+<h5 id="mediatypes">Mediatypes<a class="headerlink" href="#mediatypes" title="Permanent link">#</a></h5>
+<p>A layer can be either of these three mediatypes:</p>
+<ul>
+<li><code>application/geo+json</code> -&gt; <a href="https://github.com/mapbox/simplestyle-spec">Simple Style GeoJSON</a></li>
+<li><code>application/simplestyles-extended</code> -&gt; Circles from points w/ a radius</li>
+<li><code>application/vnd.mapbox-vector-tile</code> -&gt; Mapbox style background layer</li>
+</ul>
+<h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h4>
+<p>-example for a layer with points shown as circles</p>
+<pre><code class="language-python">{&quot;type&quot;: &quot;Feature&quot;, 
+         &quot;properties&quot;: 
+             {
+               &quot;name&quot;: &quot;2EtJFks9cv5AD1V7tOao2L&quot;, 
+               &quot;score&quot;: 13, 
+               &quot;category&quot;: &quot;13&quot;, 
+               &quot;fill&quot;: &quot;true&quot;, 
+               &quot;fillColor&quot;: &quot;#f98500&quot;, 
+               &quot;fillOpacity&quot;: 0.7, 
+               &quot;stroke&quot;: &quot;true&quot;, 
+               &quot;color&quot;: &quot;#232323&quot;, 
+               &quot;opacity&quot;: &quot;1.0&quot;, 
+               &quot;weight&quot;: 1.0, 
+               &quot;radius&quot;: &quot;3.0&quot;, 
+               &quot;strokeColor&quot;: &quot;#232323&quot;
+              }, 
+              &quot;geometry&quot;: {&quot;type&quot;: &quot;Point&quot;, 
+                &quot;coordinates&quot;: [8.5552764, 47.3757927]}
+                }
+
+</code></pre>
+<p>-example for a layer with polygons styled as <a href="https://github.com/mapbox/simplestyle-spec">Simple Styles</a></p>
+<pre><code class="language-python">{&quot;type&quot;: &quot;Feature&quot;, 
+         &quot;properties&quot;: {&quot;name&quot;: &quot;2EtJFks9cv5AD1V7tOao2L&quot;, 
+               &quot;score&quot;: 13, 
+               &quot;category&quot;: &quot;13&quot;,  
+               &quot;fill&quot;: &quot;#f98500&quot;, 
+               &quot;fill-opacity&quot;: 0.7, 
+               &quot;stroke&quot;: &quot;true&quot;, 
+               &quot;color&quot;: &quot;#232323&quot;, 
+               &quot;opacity&quot;: &quot;1.0&quot;, 
+               &quot;weight&quot;: 1.0, 
+               &quot;radius&quot;: &quot;3.0&quot;, 
+               &quot;strokeColor&quot;: 
+               &quot;#232323&quot;}, 
+        &quot;geometry&quot;: {
+              &quot;type&quot;: &quot;Polygon&quot;, &quot;coordinates&quot;: [[[8.5552764, 47.3757927],[8.5452764, 47.3657927],[8.5552764, 47.3657927]]]}}               
+</code></pre>
+<p>More detailed mappings of the property names are available <a href="https://hackmd.io/@n0rdlicht/HkaDNg_rL">here</a>.</p>
+<h1 id="snapshot">Snapshot<a class="headerlink" href="#snapshot" title="Permanent link">#</a></h1>
+<ul>
+<li>is a static <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> <code>document</code> for describing (geo)spatial data</li>
+<li><strong>mainly</strong> to easily render maps, e.g. on the <a href="https://github.com/cividi/spatial-data-package-platform">Spatial Data Package Platform</a></li>
+<li>Full Specification: <a href="https://github.com/cividi/spatial-data-package-spec">Spatial Data Package Specification</a> based on the <a href="https://specs.frictionlessdata.io">Frictionless Data Specification</a> of <a href="https://specs.frictionlessdata.io/data-package/"><code>Data Packages</code></a> and <a href="https://specs.frictionlessdata.io/data-resource/"><code>Data Resources</code></a></li>
+<li>Summary:</li>
+<li><code>has</code> <ul>
+<li>a collection of <code>resources</code> (aka the data) to be rendered as a <code>map</code> or other visual representations</li>
+<li>and metadata</li>
+</ul>
+</li>
+<li>For rendering a map: <ul>
+<li>at least one (geo)spatial <code>resource</code> with styling information</li>
+<li>referenced by a <code>view</code> object with a <code>view.specType</code> of <code>gemeindescanSnapshot</code></li>
+<li><code>view.resources</code> should list the to be rendered resources by <code>resource.name</code> in order of display (first -&gt; bottom, last -&gt; top)</li>
+</ul>
+</li>
+<li>the <code>view.spec</code> should contain<ul>
+<li><code>view.spec.bounds</code>: array of two geopoints (upper left and lower right corners of a rectangle) for rendering an initial viewpoint</li>
+<li><code>view.spec.legend</code>: array defining the legend entries for the map</li>
+<li><code>view.spec.title</code>: A title of the map</li>
+<li><code>view.spec.description</code>: (<em>optional</em>) a more detailed description of the map</li>
+<li>the <code>datapackage.resource.name</code> referenced by <code>view.resources</code></li>
+<li>is a <strong><a href="https://en.wikipedia.org/wiki/GeoJSON">GeoJSON</a></strong> object</li>
+<li>is <strong>inlined</strong> with <code>resource.data</code> and not referenced as <code>resource.path</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="example-snapshot">Example Snapshot<a class="headerlink" href="#example-snapshot" title="Permanent link">#</a></h3>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;example-snapshot&quot;,
+  &quot;description&quot;: &quot;Minimal Example Snapshot&quot;,
+  &quot;sources&quot;: [{
+    &quot;title&quot;: &quot;Example Source&quot;,
+    &quot;url&quot;: &quot;https://cividi.ch&quot;
+  }],
+  &quot;views&quot;: [{
+    &quot;name&quot;: &quot;mapview&quot;,
+    &quot;resources&quot;: [
+      &quot;geojson-resource-name-1&quot;,
+      &quot;mapbox-resource-name&quot;
+    ],
+    &quot;specType&quot;: &quot;gemeindescanSnapshot&quot;,
+    &quot;spec&quot;: {
+      &quot;title&quot;: &quot;Snapshot Title&quot;,
+      &quot;description&quot;: &quot;Snapshot Description&quot;,
+      &quot;bounds&quot;: [
+        &quot;geo:47.43668029143545,9.355459213256836&quot;,
+        &quot;geo:47.483104811626674,9.424123764038086&quot;
+      ],
+      &quot;legend&quot;: [{
+        &quot;shape&quot;: &quot;square&quot;,
+        &quot;size&quot;: 0.5,
+        &quot;color&quot;: &quot;#fff&quot;,
+        &quot;opacity&quot;: 0.2,
+        &quot;label&quot;: &quot;Legend text&quot;,
+        &quot;primary&quot;: true
+      }]
+    }
+  }],
+  &quot;resources&quot;: [{
+    &quot;title&quot;: &quot;Example GeoJSON resource&quot;,
+    &quot;description&quot;: &quot;Example GeoJSON resource&quot;,
+    &quot;mediatype&quot;: &quot;application/geo+json&quot;,
+    &quot;name&quot;: &quot;geojson-resource-name-1&quot;,
+    &quot;data&quot;: {
+      &quot;type&quot;: &quot;FeatureCollection&quot;,
+      &quot;features&quot;: [{
+        &quot;type&quot;: &quot;Feature&quot;,
+        &quot;geometry&quot;: {
+          &quot;type&quot;: &quot;Polygon&quot;,
+          &quot;coordinates&quot;: [
+            [
+              [9.294214034, 47.396980325],
+              [9.291692794, 47.403333351],
+              [9.306849507, 47.414616277],
+              [9.367107729, 47.445654958],
+              [9.434770973, 47.43213103],
+              [9.361936383, 47.404015763],
+              [9.294214034, 47.396980325]
+            ]
+          ]
+        },
+        &quot;properties&quot;: {
+          &quot;fid&quot;: 231,
+          &quot;fill&quot;: &quot;#6a6a6a&quot;,
+          &quot;title&quot;: &quot;St. Gallen&quot;,
+          &quot;stroke&quot;: &quot;#fff&quot;,
+          &quot;fill-opacity&quot;: 0.2,
+          &quot;stroke-width&quot;: 5,
+          &quot;stroke-opacity&quot;: 1
+        }
+      }]
+    }
+  }, {
+    &quot;path&quot;: &quot;mapbox://styles/gemeindescan/ck6qnoijj28od1is9u1wbb3vr&quot;,
+    &quot;mediatype&quot;: &quot;application/vnd.mapbox-vector-tile&quot;,
+    &quot;name&quot;: &quot;mapbox-resource-name&quot;
+  }]
+}
+</code></pre>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: 2021-10-18
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../about/" class="md-footer__link md-footer__link--prev" aria-label="Previous: About" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              About
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../frictionless/" class="md-footer__link md-footer__link--next" aria-label="Next: Frictionless" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Frictionless
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 <a href="https://cividi.ch">Cividi GmbH</a>.
+          </div>
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+    
+  </body>
+</html>
